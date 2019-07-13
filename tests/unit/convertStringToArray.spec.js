@@ -29,4 +29,11 @@ describe('convertStringToArray()', () => {
 
     expect(convertedPath).to.deep.equal(['object'])
   })
+
+  it('can mix brackets with periods', () => {
+    const path = '0.c[1].d'
+    const convertedPath = convertStringToArray(path)
+
+    expect(convertedPath).to.deep.equal(['0', 'c', '1', 'd'])
+  })
 })
