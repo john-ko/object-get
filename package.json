@@ -5,6 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags",
     "test": "nyc --reporter=text --reporter=lcov mocha --require @babel/register tests/**/*.spec.js"
   },
   "author": "John Ko",
