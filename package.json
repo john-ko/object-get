@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "test": "nyc --reporter=text --reporter=lcov mocha --require @babel/register tests/**/*.spec.js"
   },
   "author": "John Ko",
