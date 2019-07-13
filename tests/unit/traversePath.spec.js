@@ -2,6 +2,11 @@ import { traversePath } from '../../src'
 import { expect } from 'chai'
 
 describe('traversePath()', () => {
+  it('default arguments', () => {
+    const value = traversePath()
+    expect(value).to.be.equal(null)
+  })
+
   it('returns the correct value with the path exists', () => {
     const obj = { a: { b: 0 }}
     const path = ['a', 'b']

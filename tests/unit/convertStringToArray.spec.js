@@ -2,6 +2,12 @@ import { convertStringToArray } from '../../src'
 import { expect } from 'chai'
 
 describe('convertStringToArray()', () => {
+  it('default arguments', () => {
+    const convertedPath = convertStringToArray()
+
+    expect(convertedPath).to.be.deep.equal([])
+  })
+
   it('returns an array from a string', () => {
     const path = 'path.from.object'
     const convertedPath = convertStringToArray(path)

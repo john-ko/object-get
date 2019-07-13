@@ -7,10 +7,13 @@ export default function get (object = {}, path = '', fallback = null) {
 export function traversePath (object = {}, path = [], fallback = null) {
   let reference = object
 
+  if (path.length === 0) {
+    return fallback
+  }
+
   for (let i = 0; i < path.length; i++) {
     const key = path[i]
 
-    if (typeof reference !== 'object') return fallback
     if (reference[key] === undefined) return fallback
 
     reference = reference[key]

@@ -2,6 +2,12 @@ import { convertPath } from '../../src'
 import { expect } from 'chai'
 
 describe('convertPath()', () => {
+  it('default arguments', () => {
+    const convertedPath = convertPath()
+
+    expect(convertedPath).to.be.deep.equal([])
+  })
+
   describe('when string paths are passed down', () => {
     it('converts strings to arrays', () => {
       const path = 'path.to[object]'
